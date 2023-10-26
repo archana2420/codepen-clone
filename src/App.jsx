@@ -1,14 +1,12 @@
 import { useState } from "react"
-import CSSEditor from "./components/CSSEditor"
-import HTMLEditor from "./components/HTMLEditor"
-import JSEditor from "./components/JSEditor"
 import Navbar from "./components/Navbar"
 import OutputScreen from "./components/OutputScreen"
+import Editor from "./components/Editor"
 
 function App() {
  
   const [htmlCodeToBeDisplayed,setHtmlCodeToBeDisplayed] = useState("<h1>Hello World</h1>\n<h2>Bye</h2>")
-  const [cssCodeToBeDisplayed,setCssCodeToBeDisplayed] = useState("h1{color:'green'} h2{color:'red}")
+  const [cssCodeToBeDisplayed,setCssCodeToBeDisplayed] = useState("h1{color:green} \n h2{color:red}")
   const [jsCodeToBeDisplayed,setJsCodeToBeDisplayed] = useState("console.log('start coding')")
   
   return (
@@ -17,13 +15,22 @@ function App() {
       <div className="d-grid ">
         <div className="row" >
           <div className="col-lg">
-            <HTMLEditor setHtmlCodeToBeDisplayed={setHtmlCodeToBeDisplayed}/>
+            <Editor 
+            title={"HTML"}
+            defaultCode={htmlCodeToBeDisplayed}
+            setCodeToBeDisplayed={setHtmlCodeToBeDisplayed} />
           </div>
           <div className="col-lg">
-            <CSSEditor setCssCodeToBeDisplayed={setCssCodeToBeDisplayed}/>
+          <Editor 
+            title={"CSS"}
+            defaultCode={cssCodeToBeDisplayed}
+            setCodeToBeDisplayed={setCssCodeToBeDisplayed} />
           </div>
           <div className="col-lg">
-            <JSEditor setJsCodeToBeDisplayed={setJsCodeToBeDisplayed}/>
+          <Editor 
+            title={"JS"}
+            defaultCode={jsCodeToBeDisplayed}
+            setCodeToBeDisplayed={setJsCodeToBeDisplayed} />
           </div>
         </div>
         
