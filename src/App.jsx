@@ -10,7 +10,7 @@ function App() {
   const [htmlCodeToBeDisplayed,setHtmlCodeToBeDisplayed] = useState("<h1>Hello World</h1>\n<h2>Bye</h2>")
   const [cssCodeToBeDisplayed,setCssCodeToBeDisplayed] = useState("h1{color:'green'} h2{color:'red}")
   const [jsCodeToBeDisplayed,setJsCodeToBeDisplayed] = useState("console.log('start coding')")
-
+  
   return (
     <div className="container-fluid bg-dark  " style={{height:"100vh"}}>
       <Navbar/>

@@ -1,7 +1,6 @@
-import HTMLEditor from "./HTMLEditor"
 
 
-const OutputScreen = ({htmlCodeToBeDisplayed,cssCodeToBeDisplayed,jsCodeToDisplayed}) => {
+const OutputScreen = ({htmlCodeToBeDisplayed,cssCodeToBeDisplayed,jsCodeToBeDisplayed}) => {
   const srcDoc = `
   <html>
     <head>
@@ -10,14 +9,14 @@ const OutputScreen = ({htmlCodeToBeDisplayed,cssCodeToBeDisplayed,jsCodeToDispla
       </style>
     </head>
     <body>${htmlCodeToBeDisplayed}</body>
-    <script>${jsCodeToDisplayed}</script>
+    <script>${jsCodeToBeDisplayed}</script>
   </html>
   `
-  console.log(jsCodeToDisplayed)
+  
   return (
     <div className="container-fluid my-2 bg-info" style={{height:"55vh"}}>
-      <div>{jsCodeToDisplayed}</div>
-        {/* <iframe  srcDoc={srcDoc}  width="100%" height="100%"></iframe> */}
+      
+        <iframe  srcDoc={srcDoc} sandbox="allow-scripts"  width="100%" height="100%"></iframe>
     </div>
   )
 }
