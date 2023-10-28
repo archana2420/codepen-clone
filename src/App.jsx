@@ -5,7 +5,7 @@ import Editor from "./components/Editor"
 
 function App() {
  
-  const [htmlCodeToBeDisplayed,setHtmlCodeToBeDisplayed] = useState("<h1>Hello World</h1>\n<h2>Bye</h2>")
+  const [htmlCodeToBeDisplayed,setHtmlCodeToBeDisplayed] = useState("<h1>Welcome to codepen clone</h1>\n<h2>Start coding right away!</h2>")
   const [cssCodeToBeDisplayed,setCssCodeToBeDisplayed] = useState(`h1{
     color:green;
   } 
@@ -15,11 +15,11 @@ function App() {
   const [jsCodeToBeDisplayed,setJsCodeToBeDisplayed] = useState("console.log('start coding')")
  
   return (
-    <div className="container-fluid bg-dark  " style={{height:"100vh"}}>
+    <div className="container-fluid bg-dark pb-2 " style={{height:"100%"}}>
       <Navbar/>
-      <div className="d-grid ">
+      <div className="d-grid  ">
         <div className="row" >
-          <div className="col-lg">
+          <div className="col-lg m-sm-2">
             <Editor 
             title={"HTML"}
             defaultCode={htmlCodeToBeDisplayed}
