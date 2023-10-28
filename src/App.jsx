@@ -19,7 +19,7 @@ function App() {
       <Navbar/>
       <div className="d-grid  ">
         <div className="row" >
-          <div className="col-lg m-sm-2">
+          <div className="col-lg ">
             <Editor 
             title={"HTML"}
             defaultCode={htmlCodeToBeDisplayed}
