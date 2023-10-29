@@ -1,5 +1,6 @@
 
 
+
 const OutputScreen = ({htmlCodeToBeDisplayed,cssCodeToBeDisplayed,jsCodeToBeDisplayed}) => {
   const srcDoc = `
   <html>
@@ -12,6 +13,10 @@ const OutputScreen = ({htmlCodeToBeDisplayed,cssCodeToBeDisplayed,jsCodeToBeDisp
     <script>${jsCodeToBeDisplayed}</script>
   </html>
   `
+  
+  
+
+  
   
   return (
     <div className="container-fluid my-2 bg-white" style={{height:"55vh"}}>

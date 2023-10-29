@@ -1,18 +1,25 @@
-import { useState } from "react"
 import Navbar from "./components/Navbar"
 import OutputScreen from "./components/OutputScreen"
 import Editor from "./components/Editor"
+import useLocalStorage from "./customHooks/useLocalStorage"
 
 function App() {
  
-  const [htmlCodeToBeDisplayed,setHtmlCodeToBeDisplayed] = useState("<h1>Welcome to codepen clone</h1>\n<h2>Start coding right away!</h2>")
-  const [cssCodeToBeDisplayed,setCssCodeToBeDisplayed] = useState(`h1{
+  const [htmlCodeToBeDisplayed,setHtmlCodeToBeDisplayed] = useLocalStorage("htmlCode","<h1>Welcome to codepen clone!</h1> \n <h2>Start coding right away</h2>")
+  const [cssCodeToBeDisplayed,setCssCodeToBeDisplayed] = useLocalStorage("cssCode",`h1{
     color:green;
-  } 
+  }
   h2{
     color:red;
   }`)
-  const [jsCodeToBeDisplayed,setJsCodeToBeDisplayed] = useState("console.log('start coding')")
+  const [jsCodeToBeDisplayed,setJsCodeToBeDisplayed] = useLocalStorage("jsCode","console.log('start coding')")
+
+  
+  
+ 
+  // useEffect(()=>{
+  //   setCodeToStorage(srcDoc)
+  // },[srcDoc])
  
   return (
     <div className="container-fluid bg-dark pb-2 " style={{height:"100%"}}>
@@ -44,6 +51,7 @@ function App() {
       htmlCodeToBeDisplayed={htmlCodeToBeDisplayed}
       cssCodeToBeDisplayed={cssCodeToBeDisplayed}
       jsCodeToBeDisplayed={jsCodeToBeDisplayed}
+      // getCodeFromStorage={getCodeFromStorage}
       />
     </div>
   )
