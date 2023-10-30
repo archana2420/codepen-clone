@@ -22,6 +22,7 @@ const OutputScreen = ({htmlCodeToBeDisplayed,cssCodeToBeDisplayed,jsCodeToBeDisp
     <div className="container-fluid my-2 bg-white" style={{height:"55vh"}}>
       
         <iframe  
+        id="frame1"
         srcDoc={srcDoc} 
         sandbox="allow-scripts allow-popups allow-modals"  
         width="100%" 

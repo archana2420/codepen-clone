@@ -3,6 +3,7 @@ import OutputScreen from "./components/OutputScreen"
 import Editor from "./components/Editor"
 import useLocalStorage from "./customHooks/useLocalStorage"
 
+
 function App() {
  
   const [htmlCodeToBeDisplayed,setHtmlCodeToBeDisplayed] = useLocalStorage("htmlCode","<h1>Welcome to codepen clone!</h1> \n <h2>Start coding right away</h2>")
@@ -17,14 +18,10 @@ function App() {
   
   
  
-  // useEffect(()=>{
-  //   setCodeToStorage(srcDoc)
-  // },[srcDoc])
- 
   return (
-    <div className="container-fluid bg-dark pb-2 " style={{height:"100%"}}>
+    <div className="container-fluid bg-dark pb-2  " >
       <Navbar/>
-      <div className="d-grid  ">
+      <div className="d-grid ">
         <div className="row" >
           <div className="col-lg ">
             <Editor 
@@ -51,7 +48,7 @@ function App() {
       htmlCodeToBeDisplayed={htmlCodeToBeDisplayed}
       cssCodeToBeDisplayed={cssCodeToBeDisplayed}
       jsCodeToBeDisplayed={jsCodeToBeDisplayed}
-      // getCodeFromStorage={getCodeFromStorage}
+     
       />
     </div>
   )
